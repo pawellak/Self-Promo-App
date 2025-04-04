@@ -1,33 +1,37 @@
 package pl.pawel.selfpromoapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import pl.pawel.selfpromoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private  lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
-        val previewButton: Button = findViewById<Button>(R.id.preview_button)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        previewButton.setOnClickListener {
+        binding.previewButton.setOnClickListener {
             onPreviewClicked()
 
         }
 
+        val spinnerValues: Array<String> = arrayOf("Option 1", "Option 2", "Option 3")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerValues)
+        binding.spinnerJobTitle.adapter = adapter
 
     }
 
     private fun onPreviewClicked() {
-        val contactNameEditText: TextInputEditText = findViewById(R.id.edit_text_contact_name)
-        val contactNumberEditText: TextInputEditText = findViewById(R.id.edit_text_contact_number)
-        val testString = contactNameEditText.text.toString() + ", " + contactNumberEditText.text.toString()
-        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
+        val previewIntent = Intent(this, PreviewActivity::class.java)
+        previewIntent.putExtra("Contact Name",binding.editTextContactName.toString())
+        startActivity(previewIntent)
     }
 }

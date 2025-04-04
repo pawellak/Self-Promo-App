@@ -6,4 +6,6 @@
     <string name="include_junior">Include \'junior\'</string>
     <string name="immediate_start">Immediate Start</string>
     <string name="preview_message">Preview Message</string>
+    <string name="available_from_date">Available from date</string>
+    <string name="send_message">SEND MESSAGE</string>
 </resources>
