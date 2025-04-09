@@ -20,18 +20,28 @@ class MainActivity : AppCompatActivity() {
 
         binding.previewButton.setOnClickListener {
             onPreviewClicked()
-
         }
 
-        val spinnerValues: Array<String> = arrayOf("Option 1", "Option 2", "Option 3")
+        val spinnerValues: Array<String> = arrayOf("Android Developer", "Android Engineer")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerValues)
         binding.spinnerJobTitle.adapter = adapter
-
     }
 
     private fun onPreviewClicked() {
+
+        val message = Message(
+            contactName = binding.editTextContactName.text.toString(),
+            contactNumber = binding.editTextContactNumber.text.toString(),
+            myDisplayName = binding.editTextMyDisplayName.text.toString(),
+            includeJunior = binding.checkBoxJunior.isChecked,
+            jobTitle = binding.spinnerJobTitle.selectedItem.toString(),
+            immediateStart = binding.checkBoxImmediateStart.isChecked,
+            startDate = binding.editTextStartDate.text.toString()
+        )
+
         val previewIntent = Intent(this, PreviewActivity::class.java)
-        previewIntent.putExtra("Contact Name",binding.editTextContactName.toString())
+
+        previewIntent.putExtra("Message", message)
         startActivity(previewIntent)
     }
 }
