@@ -41,8 +41,6 @@ class MainActivity : AppCompatActivity() {
 
         val previewIntent = Intent(this, PreviewActivity::class.java)
         previewIntent.putExtra("Message", message)
-
         startActivity(previewIntent)
-
     }
 }

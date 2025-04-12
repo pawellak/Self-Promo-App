@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.SelfPromoApp" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">#5600B3</item>
+         <item name="colorPrimaryDark">#FFC107</item>
+         <item name="colorAccent">#E91E63</item>
     </style>
 
     <style name="Theme.SelfPromoApp" parent="Base.Theme.SelfPromoApp" />

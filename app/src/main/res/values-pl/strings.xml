@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Self Promo App</string>
+    <string name="contact_name">Kontakt</string>
+    <string name="my_display_name">Moja nazwa</string>
+    <string name="contact_number">Number telefonu</string>
+    <string name="include_junior">Zawiera \'junior\'</string>
+    <string name="immediate_start">Natychmiastowy Start</string>
+    <string name="preview_message">Podgląd Wiadomości</string>
+    <string name="available_from_date">Dostępny opd</string>
+    <string name="send_message">Wyślij Wiadomość</string>
+</resources>
